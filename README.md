@@ -16,7 +16,7 @@ A YOLOv5-based pipeline for robust sperm detection and tracking in microscope vi
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/yolov5-sperm-racing.git
+git clone https://github.com/CosmasMandikonza/yolov5-sperm-racing.git
 cd yolov5-sperm-racing
 python -m venv venv
 source venv/bin/activate  # or .\venv\Scripts\activate on Windows
