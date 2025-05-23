@@ -1,0 +1,14 @@
+# yolov5-sperm-racing requirements.txt
+numpy>=1.23.5
+opencv-python>=4.1.1
+torch>=1.8.0
+torchvision>=0.9.0
+matplotlib>=3.3
+ultralytics>=8.2.34
+tqdm>=4.66.3
+PyYAML>=5.3.1
+requests>=2.32.2
+pillow>=10.3.0
+psutil
+scipy>=1.4.1
+# pycocotools>=2.0.6  # COCO mAP

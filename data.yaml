@@ -1,0 +1,7 @@
+train: C:/Users/LENOVO/yolov5/yolov5-master/Sperm-racing-detection.v1i.yolov5pytorch/train/images
+val: C:/Users/LENOVO/yolov5/yolov5-master/Sperm-racing-detection.v1i.yolov5pytorch/valid/images
+test: C:/Users/LENOVO/yolov5/yolov5-master/Sperm-racing-detection.v1i.yolov5pytorch/test/images
+
+nc: 1
+names: ['sperms']
+
