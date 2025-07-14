@@ -1,5 +1,5 @@
 """
-race_viz.py
+race_viz.py.
 -----------
 Visualizes detections and tracks of sperm cells using YOLOv5 and SORT tracker.
 
@@ -20,6 +20,7 @@ Assumptions:
 
 import cv2
 import numpy as np
+
 from sort import Sort  # Make sure you have sort.py in the same directory
 
 # ----------- PARAMETERS (edit as needed) -------------------
@@ -34,7 +35,10 @@ OUTPUT_VIDEO = "output_leader_viz.avi"  # Output file name
 
 # Load YOLOv5 model (using torch.hub or ultralytics, adjust for your setup)
 import torch
-model = torch.hub.load('ultralytics/yolov5', 'custom', path=YOLO_WEIGHTS, source='local')  # source='local' for local weights
+
+model = torch.hub.load(
+    "ultralytics/yolov5", "custom", path=YOLO_WEIGHTS, source="local"
+)  # source='local' for local weights
 
 # Initialize video reader and writer
 cap = cv2.VideoCapture(INPUT_VIDEO)
@@ -42,7 +46,7 @@ fps = cap.get(cv2.CAP_PROP_FPS)
 w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
+fourcc = cv2.VideoWriter_fourcc(*"XVID")
 out = cv2.VideoWriter(OUTPUT_VIDEO, fourcc, fps, (w, h))
 
 # Initialize the SORT tracker
@@ -77,11 +81,11 @@ while True:
         x1, y1, x2, y2, track_id = d
         x1, y1, x2, y2, track_id = int(x1), int(y1), int(x2), int(y2), int(track_id)
         # Draw rectangle and track ID
-        cv2.rectangle(frame, (x1, y1), (x2, y2), (0,255,0), 2)
-        cv2.putText(frame, f'ID {track_id}', (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,0), 2)
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        cv2.putText(frame, f"ID {track_id}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
     # Optional: Write frame number on video for debug
-    cv2.putText(frame, f'Frame: {frame_num}', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
+    cv2.putText(frame, f"Frame: {frame_num}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
     out.write(frame)
     frame_num += 1
@@ -96,4 +100,3 @@ out.release()
 cv2.destroyAllWindows()
 
 print(f"Saved output video with tracking: {OUTPUT_VIDEO}")
-
