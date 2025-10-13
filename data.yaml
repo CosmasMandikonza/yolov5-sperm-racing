@@ -3,5 +3,4 @@ val: C:/Users/LENOVO/yolov5/yolov5-master/Sperm-racing-detection.v1i.yolov5pytor
 test: C:/Users/LENOVO/yolov5/yolov5-master/Sperm-racing-detection.v1i.yolov5pytorch/test/images
 
 nc: 1
-names: ['sperms']
-
+names: ["sperms"]
